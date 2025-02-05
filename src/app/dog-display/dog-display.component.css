@@ -1,0 +1,26 @@
+.dog-breeds {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .dog-breed {
+    background-color: lightcyan;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dog-breed h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+  }
+  
+  .dog-breed p {
+    margin: 8px 0;
+  }
+  
+  .dog-breed p strong {
+    color: #333;
+  }
