@@ -1,18 +1,35 @@
-
- <div *ngFor="let breed of breeds" class="dog-breed">
-    <h3>{{ breed.name }}</h3>
-    <p><strong>Description:</strong> {{ breed.description }}</p>
-    <p><strong>Life Expectancy:</strong> {{ breed.lifeMin }} - {{ breed.lifeMax }} years</p>
-    <p><strong>Male Weight Range:</strong> {{ breed.maleWeightMin }} - {{ breed.maleWeightMax }} kg</p>
-    <p><strong>Female Weight Range:</strong> {{ breed.femaleWeightMin }} - {{ breed.femaleWeightMax }} kg</p>
-    <p><strong>Hypoallergenic:</strong> {{ breed.hypoallergenic ? 'Yes' : 'No' }}</p>
+<!-- Title section -->
+<div class="title">
+    <h1>Dog Breeds</h1>
 </div>
 
-<div style="display: block;">
-    <canvas baseChart
-            [data]="chartData"
-            [options]="chartOptions"
-            chartType="bar">
-    </canvas>
-</div>
+<!-- Main content section -->
+<div class="content">
+    <!-- First half -->
+    <div class="first-half">
+        <div class="half">
+            <div style="display: block; width: 85%;">
+                <canvas baseChart [data]="chartData" [options]="chartOptions" chartType="bar">
+                </canvas>
+            </div>
+        </div>
+        <div class="half">
+            <div style="display: block; width: 80%;">
+                <canvas baseChart [data]="weightChartData" [options]="weightChartOptions" chartType="bar">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <!-- Second half -->
+    <div class="second-half">
+        <div *ngFor="let breed of breeds" class="dog-breeds">
+            <h3>{{ breed.name }}</h3>
+            <p><strong>Description:</strong> {{ breed.description }}</p>
+            <p><strong>Life Expectancy:</strong> {{ breed.lifeMin }} - {{ breed.lifeMax }} years</p>
+            <p><strong>Male Weight Range:</strong> {{ breed.maleWeightMin }} - {{ breed.maleWeightMax }} kg</p>
+            <p><strong>Female Weight Range:</strong> {{ breed.femaleWeightMin }} - {{ breed.femaleWeightMax }} kg</p>
+            <p><strong>Hypoallergenic:</strong> {{ breed.hypoallergenic ? 'Yes' : 'No' }}</p>
+        </div>
 
+    </div>
+</div>
